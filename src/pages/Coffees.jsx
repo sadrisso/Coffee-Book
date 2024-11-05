@@ -8,11 +8,11 @@ const Coffees = () => {
     return (
         <div>
             {allData.map((data, i) =>
-                <div key={i}>
+                <div key={i} className="">
                     <div className="border rounded-2xl p-5 ">
-                        <h2>{data.name}</h2>
-                        <img src={data.image} alt="" className="h-[150px] w-[270px] mx-auto rounded-xl" />
-                        <Link to={`/coffee/${data.id}`}><button className="btn">Details</button></Link>
+                        <h2 className="text-2xl font-bold mb-5">{data.name}</h2>
+                        <img src={data.image} alt="" className="h-[450px] w-[1270px] mx-auto rounded-xl" />
+                        <Link to={`/coffee/${data.id}`}><button className="btn btn-info mt-5 text-white">Details</button></Link>
                     </div>
                 </div>)}
         </div>

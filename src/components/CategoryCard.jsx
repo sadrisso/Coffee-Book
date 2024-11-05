@@ -21,7 +21,7 @@ const CategoryCard = () => {
     }, [allData, category])
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
             {coffees.map((coffee, i) => <Category key={i} coffee={coffee}/>)}
         </div>
     );

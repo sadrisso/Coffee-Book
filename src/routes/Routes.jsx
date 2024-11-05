@@ -3,6 +3,8 @@ import MainLayout from '../layout/MainLayout';
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import CategoryCard from "../components/CategoryCard";
+import CoffeeDetails from "../pages/CoffeeDetails";
+import Coffees from "../pages/Coffees";
 
 
 const routes = createBrowserRouter([
@@ -31,6 +33,16 @@ const routes = createBrowserRouter([
           path: '/dashboard',
           element: <Dashboard />
         },
+        {
+          path: '/coffee/:id',
+          loader: () => fetch("../coffees.json"),
+          element: <CoffeeDetails />
+        },
+        {
+          path: '/coffees',
+          loader: () => fetch("../coffees.json"),
+          element: <Coffees/>
+        }
 
       ]
     }

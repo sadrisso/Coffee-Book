@@ -1,17 +1,21 @@
+
 import { useLoaderData, useParams } from "react-router-dom";
 
 
 const CoffeeDetails = () => {
 
-    const id = useParams();
+    const { id } = useParams();
     const allData = useLoaderData()
-    const filteredData = allData.filter((data) => data.id === id);
+    const selectedItem = allData.find((data) => data.id == id)
 
-    console.log(filteredData)
+    console.log(selectedItem)
 
     return (
         <div>
-            <h2>{filteredData.length}</h2>
+            <div className="border rounded-2xl p-5 ">
+                <h2>{selectedItem.name}</h2>
+                <img src={selectedItem.image} alt="" className="h-[150px] w-[270px] mx-auto rounded-xl" />
+            </div>
         </div>
     );
 };

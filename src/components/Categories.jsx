@@ -7,12 +7,14 @@ const Categories = ({ categories }) => {
 
     return (
         <div>
-            <div role="tablist" className="tabs tabs-boxed my-4">
+            <div className="bg-slate-300 p-5 text-center rounded-3xl mb-4">
                 {categories.map((category, i) =>
                     <NavLink
                         to={`/category/${category.category}`}
                         key={i}
-                        className={({isActive}) => isActive ? "text-red" : "tab"}
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-700 text-xl" : "btn mx-3"
+                          }
                         role="tab">
                         {category.category}
                     </NavLink>)

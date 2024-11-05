@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from '../layout/MainLayout';
 import Home from "../pages/Home";
-import Coffees from "../pages/Coffees";
 import Dashboard from "../pages/Dashboard";
+import CategoryCard from "../components/CategoryCard";
 
 
 const routes = createBrowserRouter([
@@ -13,16 +13,25 @@ const routes = createBrowserRouter([
         {
           path: '/',
           element: <Home />,
-          loader: () => fetch("/categories.json"),
-        },
-        {
-          path: '/coffees',
-          element: <Coffees />
+          loader: () => fetch("../categories.json"),
+          children: [
+            {
+              path: '/',
+              element: <CategoryCard />,
+              loader: () => fetch("../coffees.json")
+            },
+            {
+              path: '/category/:category',
+              element: <CategoryCard />,
+              loader: () => fetch("../coffees.json")
+            }
+          ]
         },
         {
           path: '/dashboard',
           element: <Dashboard />
-        }
+        },
+
       ]
     }
   ])

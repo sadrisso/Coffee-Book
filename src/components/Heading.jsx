@@ -3,7 +3,7 @@
 
 const Heading = ({ title, subtitle }) => {
     return (
-        <div className="flex flex-col justify-center items-center space-y-3 my-4">
+        <div className="flex flex-col justify-center items-center space-y-3 my-10">
             <h2 className="text-3xl font-thin">{title}</h2>
             <p>{subtitle}</p>
         </div>

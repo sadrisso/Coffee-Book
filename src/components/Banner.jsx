@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-        <div className="hero bg-banner bg-base-200 min-h-[650px] rounded-2xl my-3">
+        <div className="hero bg-banner bg-base-200 min-h-[600px] rounded-2xl my-3">
         </div>
     );
 };

@@ -4,17 +4,30 @@ import { LevelContext } from "../context/context";
 
 const Dashboard = () => {
 
-    const {coffees} = useContext(LevelContext)
+    const { coffees, wishListCoffees } = useContext(LevelContext)
 
     return (
-        <div>
-            {coffees.map((coffee, i) =>
-                <div key={i}>
-                    <img src={coffee.image} alt="" className="w-[200px]" />
-                    <p>Name: {coffee.name}</p>
-                    <p>Id: {coffee.id}</p>
-                </div>
-            )}
+        <div className="flex justify-between px-5 mt-10">
+            <div>
+                <h2 className="text-3xl font-bold">Cart Items</h2>
+                {coffees.map((coffee, i) =>
+                    <div key={i}>
+                        <img src={coffee.image} alt="" className="w-[200px]" />
+                        <p>Name: {coffee.name}</p>
+                        <p>Id: {coffee.id}</p>
+                    </div>
+                )}
+            </div>
+            <div>
+                <h2 className="text-3xl font-bold">Wish List Items</h2>
+                {wishListCoffees.map((coffee, i) =>
+                    <div key={i}>
+                        <img src={coffee.image} alt="" className="w-[200px]" />
+                        <p>Name: {coffee.name}</p>
+                        <p>Id: {coffee.id}</p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

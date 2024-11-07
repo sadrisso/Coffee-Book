@@ -10,9 +10,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const MainLayout = () => {
 
     const [coffees, setCoffees] = useState([]);
+    const [wishListCoffees, setWishListCoffees] = useState([]);
 
     return (
-        <LevelContext.Provider value={{ coffees, setCoffees }}>
+        <LevelContext.Provider value={{ coffees, setCoffees, wishListCoffees, setWishListCoffees }}>
             <div className="container mx-auto">
                 <Header />
                 <div className="min-h-[calc(100vh-290px)] ">

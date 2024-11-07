@@ -10,13 +10,19 @@ const CoffeeDetails = () => {
     const { id } = useParams();
     const allData = useLoaderData()
     const selectedItem = allData.find((data) => data.id == id)
-    const {coffees, setCoffees} = useContext(LevelContext)
+    const {coffees, setCoffees, wishListCoffees, setWishListCoffees} = useContext(LevelContext)
 
 
     const handleAddToCart = () => {
         const cartItems = [...coffees, selectedItem];
         setCoffees(cartItems);
         toast.success("Item added to the cart")
+    }
+
+    const handleAddToWishList = () => {
+        const wishListItems = [...wishListCoffees, selectedItem];
+        setWishListCoffees(wishListItems);
+        toast.success("Item added to the wish list")
     }
 
     return (
@@ -35,7 +41,7 @@ const CoffeeDetails = () => {
                     {selectedItem.ingredients.map((ing, i) => <p key={i}>{ing}</p>)}
                 </div>
                 <button className="btn mt-5 btn-success text-white mr-4" onClick={handleAddToCart}>Add To Cart</button>
-                <button className="btn btn-warning text-white">Add to Wish List</button>
+                <button className="btn btn-warning text-white" onClick={handleAddToWishList}>Add to Wish List</button>
             </div>
         </div>
     );

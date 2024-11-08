@@ -9,8 +9,8 @@ const CoffeeDetails = () => {
 
     const { id } = useParams();
     const allData = useLoaderData()
-    const selectedItem = allData.find((data) => data.id == id)
     const {coffees, setCoffees, wishListCoffees, setWishListCoffees} = useContext(LevelContext)
+    const selectedItem = allData.find((data) => data.id == id)
 
 
     const handleAddToCart = () => {

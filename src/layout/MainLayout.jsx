@@ -15,7 +15,9 @@ const MainLayout = () => {
     return (
         <LevelContext.Provider value={{ coffees, setCoffees, wishListCoffees, setWishListCoffees }}>
             <div className="container mx-auto">
-                <Header />
+                <div className="h-16">
+                    <Header />
+                </div>
                 <div className="min-h-[calc(100vh-290px)] ">
                     <Outlet />
                 </div>
